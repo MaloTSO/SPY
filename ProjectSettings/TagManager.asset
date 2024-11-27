@@ -20,6 +20,7 @@ TagManager:
   - EditorMapCanvas
   - ScriptEditorCanvas
   - ConditionNotif
+  - Energie
   layers:
   - Default
   - TransparentFX

@@ -266,6 +266,7 @@ public class UISystem : FSystem {
 		gameData.totalStep = 0;
 		gameData.totalExecute = 0;
 		gameData.totalCoin = 0;
+		gameData.totalEnergie = 0;
 		gameData.levelToLoadScore = null;
 }
 

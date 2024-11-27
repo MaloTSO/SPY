@@ -9,6 +9,8 @@ using UnityEngine.UI;
 public class GameStateManager : FSystem {
 
     private Family f_coins = FamilyManager.getFamily(new AnyOfTags("Coin"));
+
+    private Family f_energies = FamilyManager.getFamily(new AnyOfTags("Energie"));
     private Family f_directions = FamilyManager.getFamily(new AllOfComponents(typeof(Direction)), new NoneOfComponents(typeof(Detector)));
     private Family f_positions = FamilyManager.getFamily(new AllOfComponents(typeof(Position)), new NoneOfComponents(typeof(Detector)));
     private Family f_activables = FamilyManager.getFamily(new AllOfComponents(typeof(Activable)));
@@ -50,6 +52,10 @@ public class GameStateManager : FSystem {
         save.rawSave.coinsState.Clear();
         foreach (GameObject coin in f_coins)
             save.rawSave.coinsState.Add(coin.activeSelf);
+        save.rawSave.totalEnergie = gameData.totalEnergie;
+        save.rawSave.energiesState.Clear();
+        foreach (GameObject energie in f_energies)
+            save.rawSave.energiesState.Add(energie.activeSelf);
         save.rawSave.directions.Clear();
         foreach (GameObject dir in f_directions)
             save.rawSave.directions.Add(dir.GetComponent<Direction>().direction);
@@ -91,6 +97,14 @@ public class GameStateManager : FSystem {
             coin_go.GetComponent<Renderer>().enabled = save.rawSave.coinsState[i];
             coin_go.GetComponent<Collider>().enabled = save.rawSave.coinsState[i];
         }
+
+        for (int i = 0; i < f_energies.Count && i < save.rawSave.energiesState.Count ; i++)
+        {
+            GameObject energie_go = f_energies.getAt(i);
+            GameObjectManager.setGameObjectState(energie_go, save.rawSave.energiesState[i]);
+            energie_go.GetComponent<Renderer>().enabled = save.rawSave.energiesState[i];
+            energie_go.GetComponent<Collider>().enabled = save.rawSave.energiesState[i];
+        }
         for (int i = 0; i < f_directions.Count && i < save.rawSave.directions.Count ; i++)
             f_directions.getAt(i).GetComponent<Direction>().direction = save.rawSave.directions[i];
         for (int i = 0; i < f_positions.Count && i < save.rawSave.positions.Count ; i++)
@@ -98,7 +112,7 @@ public class GameStateManager : FSystem {
             Position pos = f_positions.getAt(i).GetComponent<Position>();
             pos.x = save.rawSave.positions[i].x;
             pos.y = save.rawSave.positions[i].y;
-            // Téléport object to the right position
+            // Tï¿½lï¿½port object to the right position
             pos.transform.position = level.transform.position + new Vector3(pos.y * 3, pos.transform.position.y - level.transform.position.y, pos.x * 3);
         }
         for (int i = 0; i < f_activables.Count && i < save.rawSave.activables.Count; i++)

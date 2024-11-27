@@ -256,7 +256,7 @@ public class SaveFileSystem : FSystem
 					break;
 
 				default:
-					if (fo.type != Cell.Coin)
+					if (fo.type != Cell.Coin && fo.type != Cell.Energie)
 					{
 						Debug.Log("Unexpected floor object type, object ignored: " + fo.type);
 						break;

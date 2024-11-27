@@ -676,8 +676,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247112759}
   m_HandleRect: {fileID: 247112758}
   m_Direction: 2
-  m_Value: 0.9999994
-  m_Size: 0.8193277
+  m_Value: 0.99999934
+  m_Size: 0.8487395
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -1855,7 +1855,7 @@ GameObject:
   - component: {fileID: 175653121}
   - component: {fileID: 175653120}
   m_Layer: 5
-  m_Name: Energy
+  m_Name: Energie
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1922,7 +1922,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a851999ad524fd640a3b2ec45d400d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Cr\xE9er une pi\xE8ce"
+  text: "cr\xE9er une \xE9nergie"
 --- !u!114 &175653123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11866,7 +11866,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Energy
+  m_text: Energie
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -28387,7 +28387,7 @@ MonoBehaviour:
   doorTile: {fileID: 11400000, guid: 24211b29d3dd2914cb45de8e4c75b6e3, type: 2}
   consoleTile: {fileID: 11400000, guid: 6e0f23fa94ad7284bb2ccbbae8290213, type: 2}
   coinTile: {fileID: 11400000, guid: b4ed4540a2c4ad044bfb96663fd0a66a, type: 2}
-  energyTile: {fileID: 11400000, guid: efe51eec61483264d9f1715b3095fd09, type: 2}
+  energieTile: {fileID: 11400000, guid: efe51eec61483264d9f1715b3095fd09, type: 2}
   placingCursor: {fileID: 2800000, guid: 28bb5c6e5b0501043b0e2755e3cde5c2, type: 3}
   defaultDecoration: Modern Furniture/Prefabs/Coffee Table
   paintableGrid: {fileID: 1662234106}
