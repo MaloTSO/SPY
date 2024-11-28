@@ -97,7 +97,8 @@ public class GameStateManager : FSystem {
             coin_go.GetComponent<Renderer>().enabled = save.rawSave.coinsState[i];
             coin_go.GetComponent<Collider>().enabled = save.rawSave.coinsState[i];
         }
-
+        
+        gameData.totalEnergie = save.rawSave.totalEnergie;
         for (int i = 0; i < f_energies.Count && i < save.rawSave.energiesState.Count ; i++)
         {
             GameObject energie_go = f_energies.getAt(i);
