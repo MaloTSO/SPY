@@ -34,7 +34,8 @@ public class EnergieManager : FSystem {
 				//Check if the player collide with a 
                 if(target.CompareTag("Energie")){
                     gameData.totalEnergie++;
-                    target.GetComponent<AudioSource>().Play();
+					Debug.Log(gameData.totalEnergie);
+                    // target.GetComponent<AudioSource>().Play();
 					target.GetComponent<Collider>().enabled = false;
                     MainLoop.instance.StartCoroutine(energieDestroy(target));					
 				}
