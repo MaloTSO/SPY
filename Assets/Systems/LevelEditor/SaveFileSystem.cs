@@ -261,7 +261,13 @@ public class SaveFileSystem : FSystem
 						Debug.Log("Unexpected floor object type, object ignored: " + fo.type);
 						break;
 					}
-					levelExport += "\t<coin posX=\"" + (fo.col + 1 - minCol) + "\" posY=\"" + (fo.line + 1 - minLine) + "\" />\n\n";
+					if (fo.type == Cell.Energie)
+						levelExport += "\t<energie posX=\"" + (fo.col + 1 - minCol) + "\" posY=\"" + (fo.line + 1 - minLine) + "\" />\n\n";
+					if (fo.type == Cell.Coin)
+					{
+						levelExport += "\t<coin posX=\"" + (fo.col + 1 - minCol) + "\" posY=\"" + (fo.line + 1 - minLine) + "\" />\n\n";
+					}
+					
 					break;
 			}
 		}
