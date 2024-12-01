@@ -20,8 +20,9 @@ public class TilePopupSystem : FSystem
 	public GameObject rangePopup;
 	public GameObject consoleSlotsPopup;
 	public GameObject doorSlotPopup;
+	public GameObject consoleEnergieSlotsPopup;
+	public GameObject doorEnergieSlotPopup;
 	public GameObject furniturePopup;
-
 	public PaintableGrid paintableGrid;
 
 	public GameObject selection;
@@ -103,6 +104,21 @@ public class TilePopupSystem : FSystem
 					// load data
 					consoleSlotsPopup.GetComponentInChildren<TMP_InputField>().text = string.Join(", ", c.slots);
 					consoleSlotsPopup.GetComponentInChildren<Toggle>().isOn = c.state;
+					break;
+				case DoorEnergie de:
+					// enable popups
+					GameObjectManager.setGameObjectState(orientationPopup, true);
+					GameObjectManager.setGameObjectState(doorEnergieSlotPopup, true);
+					// load data
+					doorEnergieSlotPopup.GetComponentInChildren<TMP_InputField>().text = de.slot;
+					break;
+				case ConsoleEnergie ce:
+					// enable popups
+					GameObjectManager.setGameObjectState(orientationPopup, true);
+					GameObjectManager.setGameObjectState(consoleEnergieSlotsPopup, true);
+					// load data
+					consoleEnergieSlotsPopup.GetComponentInChildren<TMP_InputField>().text = string.Join(", ", ce.slots);
+					consoleEnergieSlotsPopup.GetComponentInChildren<Toggle>().isOn = ce.state;
 					break;
 				case PlayerRobot pr:
 					// enable popups
@@ -235,6 +251,30 @@ public class TilePopupSystem : FSystem
 	{
 		if (selectedObject != null)
 			((Door)selectedObject).slot = newData;
+	}
+
+	public void popupConsoleEnergieSlots(string newData)
+	{
+		if (selectedObject != null)
+		{
+			string trimmed = String.Concat(newData.Where(c => !Char.IsWhiteSpace(c)));
+			int[] ints = Array.ConvertAll(trimmed.Split(','), s => int.TryParse(s, out int x) ? x : -1);
+			((ConsoleEnergie)selectedObject).slots = trimmed.Split(',');
+		}
+	}
+
+	// see consoleSlotsPopup GameObject childs
+	public void popupConsoleEnergieToggle(bool newData)
+	{
+		if (selectedObject != null)
+			((ConsoleEnergie)selectedObject).state = newData;
+	}
+
+	// see doorSlotPopup GameObject childs
+	public void popupDoorEnergieSlot(string newData)
+	{
+		if (selectedObject != null)
+			((DoorEnergie)selectedObject).slot = newData;
 	}
 
 	// see furniturePopup GameObject childs

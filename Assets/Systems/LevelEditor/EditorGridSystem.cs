@@ -26,6 +26,8 @@ public class EditorGridSystem : FSystem
 	public Tile decoTile;
 	public Tile doorTile;
 	public Tile consoleTile;
+	public Tile doorEnergieTile;
+	public Tile consoleEnergieTile;
 	public Tile coinTile;
 	public Tile energieTile;
 	public Texture2D placingCursor;
@@ -209,6 +211,29 @@ public class EditorGridSystem : FSystem
 						Debug.Log("Warning: Skipped console from file " + levelKey + ". Wrong data!");
 					}
 					break;
+				case "consoleEnergie":
+					try
+					{
+						position = getPositionFromXElement(child);
+						orientation = (Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value);
+
+						setTile(position.Item1, position.Item2, Cell.ConsoleEnergie, orientation);
+						
+						List<string> slotsID = new List<string>();
+						foreach (XmlNode slot in child.ChildNodes)
+						{
+							slotsID.Add(slot.Attributes.GetNamedItem("slotId").Value);
+						}
+						((ConsoleEnergie)paintableGrid.floorObjects[position]).slots = slotsID.ToArray();
+
+						int state = int.Parse(child.Attributes.GetNamedItem("state").Value);
+						((ConsoleEnergie)paintableGrid.floorObjects[position]).state = state == 1;
+					}
+					catch
+					{
+						Debug.Log("Warning: Skipped console from file " + levelKey + ". Wrong data!");
+					}
+					break;
 				case "door":
 					try
 					{
@@ -217,6 +242,20 @@ public class EditorGridSystem : FSystem
 						setTile(position.Item1, position.Item2, Cell.Door, orientation);
 						string slotId = child.Attributes.GetNamedItem("slotId").Value;
 						((Door)paintableGrid.floorObjects[position]).slot = slotId;
+					}
+					catch
+					{
+						Debug.Log("Warning: Skipped door from file " + levelKey + ". Wrong data!");
+					}
+					break;
+				case "doorEnergie":
+					try
+					{
+						position = getPositionFromXElement(child);
+						orientation = (Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value);
+						setTile(position.Item1, position.Item2, Cell.DoorEnergie, orientation);
+						string slotId = child.Attributes.GetNamedItem("slotId").Value;
+						((DoorEnergie)paintableGrid.floorObjects[position]).slot = slotId;
 					}
 					catch
 					{
@@ -310,6 +349,8 @@ public class EditorGridSystem : FSystem
 						Cell.Decoration => new DecorationObject(defaultDecoration, rotation, line, col),
 						Cell.Door => new Door(rotation, line, col),
 						Cell.Console => new Console(rotation, line, col),
+						Cell.DoorEnergie => new DoorEnergie(rotation, line, col),
+						Cell.ConsoleEnergie => new ConsoleEnergie(rotation, line, col),
 						Cell.Coin => new FloorObject(Cell.Coin, Direction.Dir.North, line, col, false, false),
 						Cell.Energie => new FloorObject(Cell.Energie, Direction.Dir.North, line, col, false, false),
 						_ => null
@@ -374,6 +415,8 @@ public class EditorGridSystem : FSystem
 			Cell.Decoration => decoTile,
 			Cell.Door => doorTile,
 			Cell.Console => consoleTile,
+			Cell.DoorEnergie => doorEnergieTile,
+			Cell.ConsoleEnergie => consoleEnergieTile,
 			Cell.Coin => coinTile,
 			Cell.Energie => energieTile,
 			
@@ -402,7 +445,9 @@ public enum Cell
 	Door = 10003,
 	Console = 10004,
 	Coin = 10005,
-	Energie = 10006
+	Energie = 10006,
+	DoorEnergie = 10007,
+	ConsoleEnergie = 10008
 }
 
 public class FloorObject
@@ -446,6 +491,17 @@ public class Console : FloorObject
 		this.state = true;
 	}
 }
+public class ConsoleEnergie : FloorObject
+{
+	public string[] slots;
+	public bool state;
+
+	public ConsoleEnergie(Direction.Dir orientation, int line, int col) : base(Cell.ConsoleEnergie, orientation, line, col)
+	{
+		this.slots = new string[0];
+		this.state = true;
+	}
+}
 
 public class Door : FloorObject
 {
@@ -456,7 +512,15 @@ public class Door : FloorObject
 		this.slot = "0";
 	}
 }
+public class DoorEnergie : FloorObject
+{
+	public string slot;
 
+	public DoorEnergie(Direction.Dir orientation, int line, int col) : base(Cell.DoorEnergie, orientation, line, col)
+	{
+		this.slot = "0";
+	}
+}
 public class Robot : FloorObject
 {
 	public string inputLine;
