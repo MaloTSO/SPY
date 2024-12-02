@@ -246,14 +246,14 @@ public class SaveFileSystem : FSystem
 					levelExport += "\t<door posX=\"" + (d.col+1 - minCol) + "\" posY=\"" + (d.line+ 1 - minLine) + "\" slotId=\""+ d.slot + "\" direction=\""+ (int)d.orientation + "\" />\n\n";
 					break;
 				case ConsoleEnergie ce:
-					levelExport += "\t<console state=\""+ (ce.state ? "1" : "0") + "\" posX=\"" + (ce.col+1 - minCol) + "\" posY=\""+ (ce.line+1 - minLine) + "\" direction=\""+ (int)ce.orientation + "\">\n";
+					levelExport += "\t<consoleEnergie state=\""+ (ce.state ? "1" : "0") + "\" posX=\"" + (ce.col+1 - minCol) + "\" posY=\""+ (ce.line+1 - minLine) + "\" direction=\""+ (int)ce.orientation + "\">\n";
 					// add each slot
 					foreach (string slot in ce.slots)
 						levelExport += "\t\t<slot slotId=\""+ slot + "\" />\n";
-					levelExport += "\t</console>\n\n";
+					levelExport += "\t</consoleEnergie>\n\n";
 					break;
 				case DoorEnergie de:
-					levelExport += "\t<door posX=\"" + (de.col+1 - minCol) + "\" posY=\"" + (de.line+ 1 - minLine) + "\" slotId=\""+ de.slot + "\" direction=\""+ (int)de.orientation + "\" />\n\n";
+					levelExport += "\t<doorEnergie posX=\"" + (de.col+1 - minCol) + "\" posY=\"" + (de.line+ 1 - minLine) + "\" slotId=\""+ de.slot + "\" direction=\""+ (int)de.orientation + "\" />\n\n";
 					break;
 				case PlayerRobot pr:
 					levelExport += "\t<player inputLine=\""+ pr.inputLine + "\" posX=\"" + (pr.col + 1 - minCol) + "\" posY=\"" + (pr.line + 1 - minLine) + "\" direction=\"" + (int)pr.orientation + "\" />\n\n";
