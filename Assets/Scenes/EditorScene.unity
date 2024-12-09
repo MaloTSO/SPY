@@ -676,8 +676,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247112759}
   m_HandleRect: {fileID: 247112758}
   m_Direction: 2
-  m_Value: 0.9999997
-  m_Size: 0.69655174
+  m_Value: 0.9999998
+  m_Size: 0.5307586
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -791,7 +791,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b36db6d6173d9a4db6f3f334b72fe30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brush: 10004
+  brush: 10008
 --- !u!114 &74123076
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2688,7 +2688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9b36db6d6173d9a4db6f3f334b72fe30, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  brush: 10003
+  brush: 10007
 --- !u!114 &209801022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5873,7 +5873,7 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 93437481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.08467877}
+  m_AnchorMin: {x: 0, y: 0.2775062}
   m_AnchorMax: {x: 1, y: 0.9999999}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
@@ -13873,8 +13873,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 391362985}
   m_HandleRect: {fileID: 391362984}
   m_Direction: 2
-  m_Value: 0.9999986
-  m_Size: 0.9153211
+  m_Value: 0.9999996
+  m_Size: 0.7224934
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -28880,6 +28880,8 @@ MonoBehaviour:
   decoTile: {fileID: 11400000, guid: 38bb8e4e29470844e828fbf2a875bce4, type: 2}
   doorTile: {fileID: 11400000, guid: 24211b29d3dd2914cb45de8e4c75b6e3, type: 2}
   consoleTile: {fileID: 11400000, guid: 6e0f23fa94ad7284bb2ccbbae8290213, type: 2}
+  doorEnergieTile: {fileID: 11400000, guid: 66912c13c94f38b49aa847d482c95f5b, type: 2}
+  consoleEnergieTile: {fileID: 11400000, guid: 0310224ca1e72a04ab001242a4a14a42, type: 2}
   coinTile: {fileID: 11400000, guid: b4ed4540a2c4ad044bfb96663fd0a66a, type: 2}
   energieTile: {fileID: 11400000, guid: efe51eec61483264d9f1715b3095fd09, type: 2}
   placingCursor: {fileID: 2800000, guid: 28bb5c6e5b0501043b0e2755e3cde5c2, type: 3}
@@ -28919,6 +28921,8 @@ MonoBehaviour:
   rangePopup: {fileID: 6605428314049068869}
   consoleSlotsPopup: {fileID: 6605428312249089499}
   doorSlotPopup: {fileID: 7876642958288735043}
+  consoleEnergieSlotsPopup: {fileID: 0}
+  doorEnergieSlotPopup: {fileID: 0}
   furniturePopup: {fileID: 6605428313545232758}
   paintableGrid: {fileID: 1662234106}
   selection: {fileID: 8366652088585671552}
