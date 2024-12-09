@@ -8,7 +8,6 @@ public class TilePopupSystem_wrapper : BaseWrapper
 	public UnityEngine.GameObject rangePopup;
 	public UnityEngine.GameObject consoleSlotsPopup;
 	public UnityEngine.GameObject doorSlotPopup;
-	public UnityEngine.GameObject consoleEnergieSlotsPopup;
 	public UnityEngine.GameObject doorEnergieSlotPopup;
 	public UnityEngine.GameObject furniturePopup;
 	public PaintableGrid paintableGrid;
@@ -21,7 +20,6 @@ public class TilePopupSystem_wrapper : BaseWrapper
 		MainLoop.initAppropriateSystemField (system, "rangePopup", rangePopup);
 		MainLoop.initAppropriateSystemField (system, "consoleSlotsPopup", consoleSlotsPopup);
 		MainLoop.initAppropriateSystemField (system, "doorSlotPopup", doorSlotPopup);
-		MainLoop.initAppropriateSystemField (system, "consoleEnergieSlotsPopup", consoleEnergieSlotsPopup);
 		MainLoop.initAppropriateSystemField (system, "doorEnergieSlotPopup", doorEnergieSlotPopup);
 		MainLoop.initAppropriateSystemField (system, "furniturePopup", furniturePopup);
 		MainLoop.initAppropriateSystemField (system, "paintableGrid", paintableGrid);
@@ -66,16 +64,6 @@ public class TilePopupSystem_wrapper : BaseWrapper
 	public void popupDoorSlot(System.String newData)
 	{
 		MainLoop.callAppropriateSystemMethod (system, "popupDoorSlot", newData);
-	}
-
-	public void popupConsoleEnergieSlots(System.String newData)
-	{
-		MainLoop.callAppropriateSystemMethod (system, "popupConsoleEnergieSlots", newData);
-	}
-
-	public void popupConsoleEnergieToggle(System.Boolean newData)
-	{
-		MainLoop.callAppropriateSystemMethod (system, "popupConsoleEnergieToggle", newData);
 	}
 
 	public void popupDoorEnergieSlot(System.String newData)

@@ -245,13 +245,6 @@ public class SaveFileSystem : FSystem
 				case Door d:
 					levelExport += "\t<door posX=\"" + (d.col+1 - minCol) + "\" posY=\"" + (d.line+ 1 - minLine) + "\" slotId=\""+ d.slot + "\" direction=\""+ (int)d.orientation + "\" />\n\n";
 					break;
-				case ConsoleEnergie ce:
-					levelExport += "\t<consoleEnergie state=\""+ (ce.state ? "1" : "0") + "\" posX=\"" + (ce.col+1 - minCol) + "\" posY=\""+ (ce.line+1 - minLine) + "\" direction=\""+ (int)ce.orientation + "\">\n";
-					// add each slot
-					foreach (string slot in ce.slots)
-						levelExport += "\t\t<slot slotId=\""+ slot + "\" />\n";
-					levelExport += "\t</consoleEnergie>\n\n";
-					break;
 				case DoorEnergie de:
 					levelExport += "\t<doorEnergie posX=\"" + (de.col+1 - minCol) + "\" posY=\"" + (de.line+ 1 - minLine) + "\" slotId=\""+ de.slot + "\" direction=\""+ (int)de.orientation + "\" />\n\n";
 					break;

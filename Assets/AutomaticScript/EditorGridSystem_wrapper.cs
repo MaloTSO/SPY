@@ -14,7 +14,6 @@ public class EditorGridSystem_wrapper : BaseWrapper
 	public UnityEngine.Tilemaps.Tile doorTile;
 	public UnityEngine.Tilemaps.Tile consoleTile;
 	public UnityEngine.Tilemaps.Tile doorEnergieTile;
-	public UnityEngine.Tilemaps.Tile consoleEnergieTile;
 	public UnityEngine.Tilemaps.Tile coinTile;
 	public UnityEngine.Tilemaps.Tile energieTile;
 	public UnityEngine.Texture2D placingCursor;
@@ -34,7 +33,6 @@ public class EditorGridSystem_wrapper : BaseWrapper
 		MainLoop.initAppropriateSystemField (system, "doorTile", doorTile);
 		MainLoop.initAppropriateSystemField (system, "consoleTile", consoleTile);
 		MainLoop.initAppropriateSystemField (system, "doorEnergieTile", doorEnergieTile);
-		MainLoop.initAppropriateSystemField (system, "consoleEnergieTile", consoleEnergieTile);
 		MainLoop.initAppropriateSystemField (system, "coinTile", coinTile);
 		MainLoop.initAppropriateSystemField (system, "energieTile", energieTile);
 		MainLoop.initAppropriateSystemField (system, "placingCursor", placingCursor);
