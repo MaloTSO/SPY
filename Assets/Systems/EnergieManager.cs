@@ -2,6 +2,7 @@
 using FYFY;
 using System.Collections;
 using FYFY_plugins.TriggerManager;
+using TMPro;
 
 /// <summary>
 /// Manage collision between player agents and Coins
@@ -15,6 +16,8 @@ public class EnergieManager : FSystem {
 	private GameData gameData;
     private bool activeEnergie;
 
+	public TextMeshProUGUI energyText;
+
 	protected override void onStart()
     {
 		activeEnergie = false;
@@ -25,6 +28,11 @@ public class EnergieManager : FSystem {
 
 		f_playingMode.addEntryCallback(delegate { activeEnergie = true; });
 		f_editingMode.addEntryCallback(delegate { activeEnergie = false; });
+
+		if (energyText != null){
+			energyText.text = "Energy: " + gameData.totalEnergie.ToString();
+		}
+
 	}
 
 	private void onNewCollision(GameObject robot){
@@ -35,6 +43,9 @@ public class EnergieManager : FSystem {
                 if(target.CompareTag("Energie")){
                     gameData.totalEnergie++;
 					Debug.Log(gameData.totalEnergie);
+					if(energyText != null){
+						energyText.text = "Energy: " + gameData.totalEnergie.ToString();
+					}
                     // target.GetComponent<AudioSource>().Play();
 					target.GetComponent<Collider>().enabled = false;
                     MainLoop.instance.StartCoroutine(energieDestroy(target));					
