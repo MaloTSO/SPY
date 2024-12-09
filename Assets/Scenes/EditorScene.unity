@@ -676,8 +676,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247112759}
   m_HandleRect: {fileID: 247112758}
   m_Direction: 2
-  m_Value: 0.9999998
-  m_Size: 0.5307586
+  m_Value: 0.9999999
+  m_Size: 0.38344827
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -9945,8 +9945,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 405118513}
   m_HandleRect: {fileID: 405118512}
   m_Direction: 2
-  m_Value: 0
-  m_Size: 1
+  m_Value: 0.9999995
+  m_Size: 0.81764704
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -25495,7 +25495,7 @@ TilemapRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: c5f95dded0201b34faef6036ba4bca76, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -28881,7 +28881,6 @@ MonoBehaviour:
   doorTile: {fileID: 11400000, guid: 24211b29d3dd2914cb45de8e4c75b6e3, type: 2}
   consoleTile: {fileID: 11400000, guid: 6e0f23fa94ad7284bb2ccbbae8290213, type: 2}
   doorEnergieTile: {fileID: 11400000, guid: 66912c13c94f38b49aa847d482c95f5b, type: 2}
-  consoleEnergieTile: {fileID: 11400000, guid: 0310224ca1e72a04ab001242a4a14a42, type: 2}
   coinTile: {fileID: 11400000, guid: b4ed4540a2c4ad044bfb96663fd0a66a, type: 2}
   energieTile: {fileID: 11400000, guid: efe51eec61483264d9f1715b3095fd09, type: 2}
   placingCursor: {fileID: 2800000, guid: 28bb5c6e5b0501043b0e2755e3cde5c2, type: 3}
@@ -28921,7 +28920,6 @@ MonoBehaviour:
   rangePopup: {fileID: 6605428314049068869}
   consoleSlotsPopup: {fileID: 6605428312249089499}
   doorSlotPopup: {fileID: 7876642958288735043}
-  consoleEnergieSlotsPopup: {fileID: 0}
   doorEnergieSlotPopup: {fileID: 0}
   furniturePopup: {fileID: 6605428313545232758}
   paintableGrid: {fileID: 1662234106}

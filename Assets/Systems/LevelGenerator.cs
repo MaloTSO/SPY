@@ -134,16 +134,13 @@ public class LevelGenerator : FSystem {
 				case "console":
 					readXMLConsole(child);
 					break;
-				case "consoleEnergie":
-					readXMLConsoleEnergie(child);
-					break;
 				case "door":
 					createDoor(int.Parse(child.Attributes.GetNamedItem("posX").Value), int.Parse(child.Attributes.GetNamedItem("posY").Value),
 					(Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value), int.Parse(child.Attributes.GetNamedItem("slotId").Value));
 					break;
 				case "doorEnergie":
 					createDoorEnergie(int.Parse(child.Attributes.GetNamedItem("posX").Value), int.Parse(child.Attributes.GetNamedItem("posY").Value),
-					(Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value), int.Parse(child.Attributes.GetNamedItem("slotId").Value));
+					(Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value));
 					break;
 				case "robot":
 				case "guard":
@@ -342,10 +339,9 @@ public class LevelGenerator : FSystem {
 		door.GetComponentInChildren<Direction>().direction = orientation;
 		GameObjectManager.bind(door);
 	}
-	private void createDoorEnergie(int gridX, int gridY, Direction.Dir orientation, int slotID){
-		GameObject doorEnergie = GameObject.Instantiate<GameObject>(Resources.Load ("Prefabs/Door") as GameObject, LevelGO.transform.position + new Vector3(gridY*3,3,gridX*3), Quaternion.Euler(0,0,0), LevelGO.transform);
+	private void createDoorEnergie(int gridX, int gridY, Direction.Dir orientation){
+		GameObject doorEnergie = GameObject.Instantiate<GameObject>(Resources.Load ("Prefabs/DoorEnergie") as GameObject, LevelGO.transform.position + new Vector3(gridY*3,3,gridX*3), Quaternion.Euler(0,0,0), LevelGO.transform);
 
-		doorEnergie.GetComponentInChildren<ActivationSlot>().slotID = slotID;
 		doorEnergie.GetComponentInChildren<Position>().x = gridX;
 		doorEnergie.GetComponentInChildren<Position>().y = gridY;
 		doorEnergie.GetComponentInChildren<Direction>().direction = orientation;
@@ -379,24 +375,6 @@ public class LevelGenerator : FSystem {
 			activable.AddComponent<TurnedOn>();
 		GameObjectManager.bind(activable);
 	}
-	private void createConsoleEnergie(int state, int gridX, int gridY, List<int> slotIDs, Direction.Dir orientation)
-	{
-		GameObject activable = GameObject.Instantiate<GameObject>(Resources.Load("Prefabs/ActivableConsole") as GameObject, LevelGO.transform.position + new Vector3(gridY * 3, 3, gridX * 3), Quaternion.Euler(0, 0, 0), LevelGO.transform);
-
-		activable.GetComponent<Activable>().slotID = slotIDs;
-		DoorPath path = activable.GetComponentInChildren<DoorPath>();
-		if (slotIDs.Count > 0)
-			path.slotId = slotIDs[0];
-		else
-			path.slotId = -1;
-		activable.GetComponent<Position>().x = gridX;
-		activable.GetComponent<Position>().y = gridY;
-		activable.GetComponent<Direction>().direction = orientation;
-		if (state == 1)
-			activable.AddComponent<TurnedOn>();
-		GameObjectManager.bind(activable);
-	}
-
 	private void createSpawnExit(int gridX, int gridY, bool type, bool hideExit = false){
 		GameObject spawnExit;
 		if(type)
@@ -491,14 +469,4 @@ public class LevelGenerator : FSystem {
 		 slotsID, (Direction.Dir)int.Parse(activableNode.Attributes.GetNamedItem("direction").Value));
 	}
 
-	private void readXMLConsoleEnergie(XmlNode activableNode){
-		List<int> slotsID = new List<int>();
-
-		foreach(XmlNode child in activableNode.ChildNodes){
-			slotsID.Add(int.Parse(child.Attributes.GetNamedItem("slotId").Value));
-		}
-
-		createConsoleEnergie(int.Parse(activableNode.Attributes.GetNamedItem("state").Value), int.Parse(activableNode.Attributes.GetNamedItem("posX").Value), int.Parse(activableNode.Attributes.GetNamedItem("posY").Value),
-		 slotsID, (Direction.Dir)int.Parse(activableNode.Attributes.GetNamedItem("direction").Value));
-	}
 }
