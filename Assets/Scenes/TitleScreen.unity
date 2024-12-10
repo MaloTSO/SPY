@@ -30787,7 +30787,7 @@ MonoBehaviour:
   listOfLevels: {fileID: 1204075371}
   playButton: {fileID: 1589537337}
   quitButton: {fileID: 1170870589}
-  levelEditorButton: {fileID: 0}
+  levelEditorButton: {fileID: 1867128427}
   loadingScreen: {fileID: 93976626}
   sessionIdPanel: {fileID: 1023252662}
   deletableElement: {fileID: 4813190638042273344, guid: dc1d1f50547cc964789eb5d37e6a522f,
@@ -32757,7 +32757,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 1806554585}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.34250543
+  m_Size: 0.372417
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -32906,7 +32906,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 101.4
+  m_fontSize: 101.55
   m_fontSizeBase: 150
   m_fontWeight: 400
   m_enableAutoSizing: 1

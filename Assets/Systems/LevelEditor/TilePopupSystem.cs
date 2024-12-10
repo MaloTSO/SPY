@@ -107,9 +107,9 @@ public class TilePopupSystem : FSystem
 				case DoorEnergie de:
 					// enable popups
 					GameObjectManager.setGameObjectState(orientationPopup, true);
-					GameObjectManager.setGameObjectState(doorEnergieSlotPopup, true);
+					//GameObjectManager.setGameObjectState(doorEnergieSlotPopup, true);
 					// load data
-					doorEnergieSlotPopup.GetComponentInChildren<TMP_InputField>().text = de.slot;
+					//doorEnergieSlotPopup.GetComponentInChildren<TMP_InputField>().text = de.slot;
 					break;
 				case PlayerRobot pr:
 					// enable popups
