@@ -105,11 +105,11 @@ public class TilePopupSystem : FSystem
 					consoleSlotsPopup.GetComponentInChildren<Toggle>().isOn = c.state;
 					break;
 				case DoorEnergie de:
-					// enable popups
+					// Enable popups for DoorEnergie
 					GameObjectManager.setGameObjectState(orientationPopup, true);
-					//GameObjectManager.setGameObjectState(doorEnergieSlotPopup, true);
-					// load data
-					//doorEnergieSlotPopup.GetComponentInChildren<TMP_InputField>().text = de.slot;
+					GameObjectManager.setGameObjectState(doorEnergieSlotPopup, true);
+					// Load energy data (if set previously)
+					doorEnergieSlotPopup.GetComponentInChildren<TMP_InputField>().text = de.requiredEnergy.ToString();
 					break;
 				case PlayerRobot pr:
 					// enable popups
@@ -244,16 +244,26 @@ public class TilePopupSystem : FSystem
 			((Door)selectedObject).slot = newData;
 	}
 	// see doorSlotPopup GameObject childs
-	public void popupDoorEnergieSlot(string newData)
-	{
-		if (selectedObject != null)
-			((DoorEnergie)selectedObject).slot = newData;
-	}
+
 
 	// see furniturePopup GameObject childs
 	public void popupFurnitureDropDown(int newData)
 	{
 		if (selectedObject != null)
 			((DecorationObject)selectedObject).path = furnitureNameToPath[newData];
+	}
+
+	public void popupDoorEnergieInput(int newData)
+	{
+		if (selectedObject != null)
+		{
+			((DoorEnergie)selectedObject).requiredEnergy = newData;
+			// Update the energy required for the door
+			Debug.Log("Energy required for the door: " + ((DoorEnergie)selectedObject).requiredEnergy);
+		}
+		else
+		{
+			Debug.LogWarning("Invalid energy input for DoorEnergie.");
+		}
 	}
 }

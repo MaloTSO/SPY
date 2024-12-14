@@ -230,8 +230,12 @@ public class EditorGridSystem : FSystem
 						position = getPositionFromXElement(child);
 						orientation = (Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value);
 						setTile(position.Item1, position.Item2, Cell.DoorEnergie, orientation);
+
 						string slotId = child.Attributes.GetNamedItem("slotId").Value;
-						((DoorEnergie)paintableGrid.floorObjects[position]).slot = slotId;
+						int requiredEnergy = int.Parse(child.Attributes.GetNamedItem("requiredEnergy")?.Value ?? "0"); // Lecture de l'énergie requise
+
+						var doorEnergie = (DoorEnergie)paintableGrid.floorObjects[position];
+						doorEnergie.requiredEnergy = requiredEnergy;
 					}
 					catch
 					{
@@ -476,12 +480,13 @@ public class Door : FloorObject
 }
 public class DoorEnergie : FloorObject
 {
-	public string slot;
+	public int requiredEnergy;
 
-	public DoorEnergie(Direction.Dir orientation, int line, int col) : base(Cell.DoorEnergie, orientation, line, col)
-	{
-		this.slot = "0";
-	}
+	public DoorEnergie(Direction.Dir orientation, int line, int col) 
+        : base(Cell.DoorEnergie, orientation, line, col)
+    {
+        this.requiredEnergy = 0;
+    }
 }
 public class Robot : FloorObject
 {

@@ -66,14 +66,14 @@ public class TilePopupSystem_wrapper : BaseWrapper
 		MainLoop.callAppropriateSystemMethod (system, "popupDoorSlot", newData);
 	}
 
-	public void popupDoorEnergieSlot(System.String newData)
-	{
-		MainLoop.callAppropriateSystemMethod (system, "popupDoorEnergieSlot", newData);
-	}
-
 	public void popupFurnitureDropDown(System.Int32 newData)
 	{
 		MainLoop.callAppropriateSystemMethod (system, "popupFurnitureDropDown", newData);
+	}
+
+	public void popupDoorEnergieInput(System.Int32 newData)
+	{
+		MainLoop.callAppropriateSystemMethod (system, "popupDoorEnergieInput", newData);
 	}
 
 }

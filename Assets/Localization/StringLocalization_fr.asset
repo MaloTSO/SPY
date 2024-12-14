@@ -1077,14 +1077,12 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 15922945045381120
-    m_Localized: "Cette section permet de d\xE9finir le slot de contr\xF4le<br>de
-      la porte. Pour qu'une porte puisse \xEAtre active,<br>le num\xE9ro de slot
-      indiqu\xE9 ici doit \xEAtre pr\xE9sent dans<br>la liste des slots contr\xF4l\xE9s
-      par au moins un terminal"
+    m_Localized: "Cette section permet de d\xE9finir la quantit\xE9<br> d'\xE9nergie
+      pour ouvrir la porte"
     m_Metadata:
       m_Items: []
   - m_Id: 15923559041155072
-    m_Localized: "Slot de contr\xF4le"
+    m_Localized: Slot de controle
     m_Metadata:
       m_Items: []
   - m_Id: 15923681313505280
