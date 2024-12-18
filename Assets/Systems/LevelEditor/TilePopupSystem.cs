@@ -256,14 +256,12 @@ public class TilePopupSystem : FSystem
 	public void popupDoorEnergieInput(int newData)
 	{
 		if (selectedObject != null)
-		{
 			((DoorEnergie)selectedObject).requiredEnergy = newData;
 			// Update the energy required for the door
 			Debug.Log("Energy required for the door: " + ((DoorEnergie)selectedObject).requiredEnergy);
-		}
-		else
-		{
-			Debug.LogWarning("Invalid energy input for DoorEnergie.");
-		}
+		//else
+		
+			//Debug.LogWarning("Invalid energy input for DoorEnergie.");
+		
 	}
 }
