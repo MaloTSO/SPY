@@ -30,7 +30,7 @@ public class EnergieTextUpdater : FSystem
             if (energyTextComponent != null && energyTextComponent.energyText != null)
             {
                 // Met à jour le texte avec la valeur actuelle de l'énergie dans GameData
-                energyTextComponent.energyText.text = "Energy: " + gameData.totalEnergie.ToString();
+                energyTextComponent.energyText.text = "Quantité d'energie : " + gameData.totalEnergie.ToString();
             }
         }
     }

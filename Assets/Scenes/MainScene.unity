@@ -2106,6 +2106,7 @@ GameObject:
   - component: {fileID: 361349247}
   - component: {fileID: 361349248}
   - component: {fileID: 361349249}
+  - component: {fileID: 361349250}
   m_Layer: 0
   m_Name: Main_Loop
   m_TagString: Untagged
@@ -2395,6 +2396,10 @@ MonoBehaviour:
   - _typeAssemblyQualifiedName: EnergieTextUpdater, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
     _typeFullName: EnergieTextUpdater
+    _pause: 0
+  - _typeAssemblyQualifiedName: EnergyDoorSystem, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _typeFullName: EnergyDoorSystem
     _pause: 0
   _lateUpdateSystemDescriptions:
   - _typeAssemblyQualifiedName: HighLightSystem, Assembly-CSharp, Version=0.0.0.0,
@@ -2809,6 +2814,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d6e4270777f567144ac315548dae6f62, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &361349250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 361349215}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7183b2563c4c881409de709cc71006ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &369729339

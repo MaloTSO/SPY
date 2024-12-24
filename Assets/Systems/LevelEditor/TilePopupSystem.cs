@@ -253,12 +253,20 @@ public class TilePopupSystem : FSystem
 			((DecorationObject)selectedObject).path = furnitureNameToPath[newData];
 	}
 
-	public void popupDoorEnergieInput(int newData)
+	public void popupDoorEnergieInput(string newData)
 	{
 		if (selectedObject != null)
-			((DoorEnergie)selectedObject).requiredEnergy = newData;
-			// Update the energy required for the door
-			Debug.Log("Energy required for the door: " + ((DoorEnergie)selectedObject).requiredEnergy);
+		{
+			if (int.TryParse(newData, out int energyValue))
+			{
+				((DoorEnergie)selectedObject).requiredEnergy = energyValue;
+				Debug.Log("Energy required for the door: " + energyValue);
+			}
+			else
+			{
+				Debug.LogWarning($"Invalid energy input: '{newData}'. Please enter a valid integer.");
+			}
+		}
 		//else
 		
 			//Debug.LogWarning("Invalid energy input for DoorEnergie.");

@@ -30,7 +30,7 @@ public class EnergieManager : FSystem {
 		f_editingMode.addEntryCallback(delegate { activeEnergie = false; });
 
 		if (energyText != null){
-			energyText.text = "Energy: " + gameData.totalEnergie.ToString();
+			energyText.text = "Quantité d'energie : " + gameData.totalEnergie;
 		}
 
 	}
@@ -44,7 +44,7 @@ public class EnergieManager : FSystem {
                     gameData.totalEnergie++;
 					Debug.Log(gameData.totalEnergie);
 					if(energyText != null){
-						energyText.text = "Energy: " + gameData.totalEnergie.ToString();
+						energyText.text = "Quantité d'energie : " + gameData.totalEnergie.ToString();
 					}
                     // target.GetComponent<AudioSource>().Play();
 					target.GetComponent<Collider>().enabled = false;
