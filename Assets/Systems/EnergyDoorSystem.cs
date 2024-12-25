@@ -1,9 +1,11 @@
 using UnityEngine;
 using FYFY;
+using System.Collections;
 
 public class EnergyDoorSystem : FSystem
 {
-    private Family f_energyDoors = FamilyManager.getFamily(new AllOfComponents(typeof(EnergyDoorComponent), typeof(Animator)));
+    private Family f_energyDoors = FamilyManager.getFamily(new AllOfComponents(typeof(EnergyDoorComponent), typeof(Position)), new AnyOfTags("DoorEnergie"));
+    private Family quads = FamilyManager.getFamily(new AllOfComponents(typeof(Collider)));
     private GameData gameData;
 
     protected override void onStart()
@@ -22,21 +24,22 @@ public class EnergyDoorSystem : FSystem
             EnergyDoorComponent doorComponent = door.GetComponent<EnergyDoorComponent>();
 
             // Vérifie si la porte doit s'ouvrir
-            if (!doorComponent.isOpen && gameData.totalEnergie >= doorComponent.requiredEnergy)
+            if (gameData.totalEnergie >= doorComponent.requiredEnergy)
             {
-                OpenDoor(door);
-                doorComponent.isOpen = true; // Marquer comme ouvert
+                foreach (GameObject quad in quads)
+                {
+                    if (quad.CompareTag("Quad")) // Filtrer par tag si nécessaire
+                    {
+                        Collider collider = quad.GetComponent<Collider>();
+                        if (collider != null)
+                        {
+                            collider.enabled = false; // Désactiver uniquement le collider
+                        }
+                    }
+                }
+                doorComponent.transform.GetComponent<Animator>().SetTrigger("Open");
+                doorComponent.transform.GetComponent<Animator>().speed = gameData.gameSpeed_current; // Vitesse de l'animation
             }
         }
-    }
-
-    private void OpenDoor(GameObject door)
-    {
-        Animator animator = door.GetComponent<Animator>();
-        if (animator != null)
-        {
-            animator.SetTrigger("Open"); // Déclenche l'animation d'ouverture
-        }
-        Debug.Log("La porte s'est ouverte !");
     }
 }

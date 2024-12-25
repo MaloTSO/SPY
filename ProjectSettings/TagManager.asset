@@ -21,6 +21,8 @@ TagManager:
   - ScriptEditorCanvas
   - ConditionNotif
   - Energie
+  - DoorEnergie
+  - Quad
   layers:
   - Default
   - TransparentFX
