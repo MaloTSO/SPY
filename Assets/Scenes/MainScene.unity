@@ -2397,10 +2397,6 @@ MonoBehaviour:
       Culture=neutral, PublicKeyToken=null
     _typeFullName: EnergieTextUpdater
     _pause: 0
-  - _typeAssemblyQualifiedName: EnergyDoorSystem, Assembly-CSharp, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-    _typeFullName: EnergyDoorSystem
-    _pause: 0
   _lateUpdateSystemDescriptions:
   - _typeAssemblyQualifiedName: HighLightSystem, Assembly-CSharp, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
@@ -2425,6 +2421,10 @@ MonoBehaviour:
   - _typeAssemblyQualifiedName: ModeManager, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
     _typeFullName: ModeManager
+    _pause: 0
+  - _typeAssemblyQualifiedName: EnergyDoorSystem, Assembly-CSharp, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+    _typeFullName: EnergyDoorSystem
     _pause: 0
   _forceUpdateInspector: 0
   _loadingState: 0
