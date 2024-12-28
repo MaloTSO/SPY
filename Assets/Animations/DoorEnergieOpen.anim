@@ -39,7 +39,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: 
+    path: Door
   m_ScaleCurves: []
   m_FloatCurves:
   - serializedVersion: 2
@@ -77,7 +77,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path: Door
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -115,10 +115,10 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: 
-    classID: 114
-    script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+    attribute: m_IsActive
+    path: Door
+    classID: 1
+    script: {fileID: 0}
     flags: 16
   m_PPtrCurves: []
   m_SampleRate: 60
@@ -129,7 +129,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 0
+      path: 718797587
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -138,7 +138,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
+      path: 718797587
       attribute: 3305885265
       script: {fileID: 0}
       typeID: 23
@@ -147,11 +147,11 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 0
-      attribute: 3305885265
-      script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
-      typeID: 114
-      customType: 24
+      path: 718797587
+      attribute: 2086281974
+      script: {fileID: 0}
+      typeID: 1
+      customType: 0
       isPPtrCurve: 0
       isIntCurve: 0
       isSerializeReferenceCurve: 0
@@ -166,7 +166,7 @@ AnimationClip:
     m_Level: 0
     m_CycleOffset: 0
     m_HasAdditiveReferencePose: 0
-    m_LoopTime: 1
+    m_LoopTime: 0
     m_LoopBlend: 0
     m_LoopBlendOrientation: 0
     m_LoopBlendPositionY: 0
@@ -203,7 +203,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.x
-    path: 
+    path: Door
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -233,7 +233,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.y
-    path: 
+    path: Door
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -263,7 +263,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_LocalPosition.z
-    path: 
+    path: Door
     classID: 4
     script: {fileID: 0}
     flags: 0
@@ -302,7 +302,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_Enabled
-    path: 
+    path: Door
     classID: 23
     script: {fileID: 0}
     flags: 0
@@ -340,12 +340,12 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    attribute: m_Enabled
-    path: 
-    classID: 114
-    script: {fileID: 11500000, guid: 69beb381e244f92449b8c4cf954630e9, type: 3}
+    attribute: m_IsActive
+    path: Door
+    classID: 1
+    script: {fileID: 0}
     flags: 16
   m_EulerEditorCurves: []
-  m_HasGenericRootTransform: 1
+  m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
   m_Events: []
