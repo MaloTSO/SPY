@@ -478,14 +478,14 @@ public class Door : FloorObject
 }
 public class DoorEnergie : FloorObject
 {
-	public int requiredEnergy;
+	public int? requiredEnergy;
 	public string conditionOperator; 
 
 	public DoorEnergie(Direction.Dir orientation, int line, int col) 
         : base(Cell.DoorEnergie, orientation, line, col)
     {
 		this.conditionOperator="";
-        this.requiredEnergy=0;
+        this.requiredEnergy=null;
     }
 }
 public class Robot : FloorObject

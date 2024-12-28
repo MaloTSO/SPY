@@ -23,13 +23,15 @@ public class EnergyDoorSystem : FSystem
         {
             EnergyDoorComponent doorComponent = door.GetComponent<EnergyDoorComponent>();
 
+            // Vérifie si un opérateur est défini, sinon attribue "=" par défaut
+            string conditionOperator = string.IsNullOrEmpty(doorComponent.conditionOperator) ? "=" : doorComponent.conditionOperator;
+
             // Vérifie la condition énergétique
             bool conditionMet = false;
 
-            switch (doorComponent.conditionOperator)
+            switch (conditionOperator)
             {
                 case ">":
-                    Debug.Log("ici >");
                     conditionMet = gameData.totalEnergie > doorComponent.requiredEnergy;
                     break;
                 case "<":
@@ -41,8 +43,13 @@ public class EnergyDoorSystem : FSystem
                 case "<=":
                     conditionMet = gameData.totalEnergie <= doorComponent.requiredEnergy;
                     break;
+                case "=":
+                    // Comparaison avec égalité si aucun autre opérateur n'est défini
+                    conditionMet = gameData.totalEnergie == doorComponent.requiredEnergy;
+                    break;
                 default:
-                    // Pas d'opérateur, compare avec égalité
+                    // Par sécurité, on utilise l'égalité comme fallback
+                    Debug.LogWarning($"Unknown condition operator: {doorComponent.conditionOperator}. Using default '=' operator.");
                     conditionMet = gameData.totalEnergie == doorComponent.requiredEnergy;
                     break;
             }
@@ -51,8 +58,9 @@ public class EnergyDoorSystem : FSystem
             if (conditionMet)
             {
                 doorComponent.transform.parent.GetComponent<Animator>().SetTrigger("Open");
-                doorComponent.transform.parent.GetComponent<Animator>().speed = gameData.gameSpeed_current*3; // Vitesse de l'animation
+                doorComponent.transform.parent.GetComponent<Animator>().speed = gameData.gameSpeed_current * 3; // Vitesse de l'animation
             }
         }
     }
+
 }

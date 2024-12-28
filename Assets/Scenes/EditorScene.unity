@@ -676,8 +676,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 247112759}
   m_HandleRect: {fileID: 247112758}
   m_Direction: 2
-  m_Value: 0.9999996
-  m_Size: 0.7624243
+  m_Value: 1
+  m_Size: 0.5721212
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5397,7 +5397,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '>,<,>=,<=,0...'
+  m_text: =, >,<,>=,<=...
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -5837,8 +5837,8 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 93437481}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0.17134137}
-  m_AnchorMax: {x: 1, y: 0.9999999}
+  m_AnchorMin: {x: 0, y: 0.3781767}
+  m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 20, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
@@ -13837,8 +13837,8 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 391362985}
   m_HandleRect: {fileID: 391362984}
   m_Direction: 2
-  m_Value: 0.9999994
-  m_Size: 0.8286585
+  m_Value: 1
+  m_Size: 0.6218233
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -22408,7 +22408,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   text: "Cette section permet de d\xE9finir le nombre d'energie necessaire pour l'ouverture
-    d'une porte"
+    d'une porte<br>On peut y mettre des conditions comme : >,<,>=,<="
 --- !u!114 &1412984041
 MonoBehaviour:
   m_ObjectHideFlags: 0

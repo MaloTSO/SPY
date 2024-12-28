@@ -24,22 +24,28 @@ public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     public void OnPointerEnter(PointerEventData eventData)
     {
         string formatedContent = text;
-        if (text.Contains("#agentName"))
+
+        // Remplacement pour #agentName, s'il est trouvé
+        if (formatedContent.Contains("#agentName"))
         {
-            formatedContent = text.Replace("#agentName", GetComponent<AgentEdit>().associatedScriptName);
+            formatedContent = formatedContent.Replace("#agentName", GetComponent<AgentEdit>().associatedScriptName);
         }
 
-        if (text.Contains("#requiredEnergy"))
+        // Remplacement pour #requiredEnergy, s'il est trouvé
+        if (formatedContent.Contains("#requiredEnergy"))
         {
             EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
-            formatedContent = text.Replace("#requiredEnergy", doorComponent.requiredEnergy.ToString());
-        }
-        if (text.Contains("#conditionOperator"))
-        {
-            EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
-            formatedContent = text.Replace("#conditionOperator", doorComponent.conditionOperator);
+            formatedContent = formatedContent.Replace("#requiredEnergy", doorComponent.requiredEnergy.ToString());
         }
 
+        // Remplacement pour #conditionOperator, s'il est trouvé
+        if (formatedContent.Contains("#conditionOperator"))
+        {
+            EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
+            formatedContent = formatedContent.Replace("#conditionOperator", doorComponent.conditionOperator);
+        }
+
+        // Affiche le tooltip avec le contenu formaté
         tooltip.ShowTooltip(formatedContent);
         isOver = true;
     }
@@ -48,7 +54,7 @@ public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (tooltip != null)
         {
-            tooltip.HideTooltip(); 
+            tooltip.HideTooltip();
             isOver = false;
         }
     }

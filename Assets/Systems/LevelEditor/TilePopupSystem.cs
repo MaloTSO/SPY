@@ -259,10 +259,16 @@ public class TilePopupSystem : FSystem
 		{
 			string trimmedData = newData.Trim();
 
-			// Vérifie si la chaîne commence par un opérateur spécial
-			string operatorPart = "";
-			string numericPart = "";
+        	if (!System.Text.RegularExpressions.Regex.IsMatch(trimmedData, @"^[0-9><=\s]+$"))
+			{
+				Debug.LogWarning($"Invalid characters in input: '{newData}'. Only valid operators : <,>,<=,>=,= and digits are allowed.");
+				return; // Arrête le traitement si la chaîne contient des caractères invalides
+			}
 
+			string operatorPart = "=";  // Valeur par défaut
+			string numericPart = trimmedData;
+
+			// Vérifie si la chaîne commence par un opérateur spécial
 			if (trimmedData.StartsWith(">="))
 			{
 				operatorPart = ">=";
@@ -283,9 +289,10 @@ public class TilePopupSystem : FSystem
 				operatorPart = "<";
 				numericPart = trimmedData.Substring(1).Trim();
 			}
-			else
+			else if (trimmedData.Contains("="))
 			{
-				numericPart = trimmedData; // Pas d'opérateur, valeur simple
+				operatorPart = "=";
+				numericPart = trimmedData.Substring(trimmedData.IndexOf('=') + 1).Trim();
 			}
 
 			// Vérifie si la partie numérique est valide
@@ -293,7 +300,6 @@ public class TilePopupSystem : FSystem
 			{
 				((DoorEnergie)selectedObject).requiredEnergy = energyValue;
 				((DoorEnergie)selectedObject).conditionOperator = operatorPart;
-
 
 				Debug.Log($"Door energy condition set: {operatorPart} {energyValue}");
 			}
