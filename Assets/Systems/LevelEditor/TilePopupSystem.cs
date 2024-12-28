@@ -149,7 +149,7 @@ public class TilePopupSystem : FSystem
 		if (selectedObject != null)
 		{
 			GameObjectManager.setGameObjectState(selection, true);
-			selection.transform.localPosition = new Vector3(-UtilityEditor.gridMaxSize/2 + selectedObject.col + 0.5f, UtilityEditor.gridMaxSize / 2 - selectedObject.line + 0.5f);
+			selection.transform.localPosition = new Vector3(-UtilityEditor.gridMaxSize / 2 + selectedObject.col + 0.5f, UtilityEditor.gridMaxSize / 2 - selectedObject.line + 0.5f);
 		}
 		else
 			GameObjectManager.setGameObjectState(selection, false);
@@ -257,19 +257,54 @@ public class TilePopupSystem : FSystem
 	{
 		if (selectedObject != null)
 		{
-			if (int.TryParse(newData, out int energyValue))
+			string trimmedData = newData.Trim();
+
+			// Vérifie si la chaîne commence par un opérateur spécial
+			string operatorPart = "";
+			string numericPart = "";
+
+			if (trimmedData.StartsWith(">="))
+			{
+				operatorPart = ">=";
+				numericPart = trimmedData.Substring(2).Trim();
+			}
+			else if (trimmedData.StartsWith("<="))
+			{
+				operatorPart = "<=";
+				numericPart = trimmedData.Substring(2).Trim();
+			}
+			else if (trimmedData.StartsWith(">"))
+			{
+				operatorPart = ">";
+				numericPart = trimmedData.Substring(1).Trim();
+			}
+			else if (trimmedData.StartsWith("<"))
+			{
+				operatorPart = "<";
+				numericPart = trimmedData.Substring(1).Trim();
+			}
+			else
+			{
+				numericPart = trimmedData; // Pas d'opérateur, valeur simple
+			}
+
+			// Vérifie si la partie numérique est valide
+			if (int.TryParse(numericPart, out int energyValue))
 			{
 				((DoorEnergie)selectedObject).requiredEnergy = energyValue;
-				Debug.Log("Energy required for the door: " + energyValue);
+				((DoorEnergie)selectedObject).conditionOperator = operatorPart;
+
+
+				Debug.Log($"Door energy condition set: {operatorPart} {energyValue}");
 			}
 			else
 			{
 				Debug.LogWarning($"Invalid energy input: '{newData}'. Please enter a valid integer.");
 			}
 		}
-		//else
-		
-			//Debug.LogWarning("Invalid energy input for DoorEnergie.");
-		
+		else
+		{
+			Debug.LogWarning("No selected object to apply energy input.");
+		}
 	}
 }

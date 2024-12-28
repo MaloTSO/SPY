@@ -25,7 +25,16 @@ public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         string formatedContent = text;
         if (text.Contains("#agentName"))
+        {
             formatedContent = text.Replace("#agentName", GetComponent<AgentEdit>().associatedScriptName);
+        }
+
+        if (text.Contains("#requiredEnergy"))
+        {
+            EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
+            formatedContent = text.Replace("#requiredEnergy", doorComponent.requiredEnergy.ToString());
+        }
+
         tooltip.ShowTooltip(formatedContent);
         isOver = true;
     }
@@ -34,7 +43,7 @@ public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     {
         if (tooltip != null)
         {
-            tooltip.HideTooltip();
+            tooltip.HideTooltip(); 
             isOver = false;
         }
     }
