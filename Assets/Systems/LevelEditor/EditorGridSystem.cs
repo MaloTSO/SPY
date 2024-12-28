@@ -483,6 +483,7 @@ public class DoorEnergie : FloorObject
 	public DoorEnergie(Direction.Dir orientation, int line, int col) 
         : base(Cell.DoorEnergie, orientation, line, col)
     {
+		this.conditionOperator="";
         this.requiredEnergy=0;
     }
 }

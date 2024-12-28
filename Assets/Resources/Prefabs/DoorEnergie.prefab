@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a851999ad524fd640a3b2ec45d400d36, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  text: "Porte \xE9nergie"
+  text: "Porte \xE9nergie<br>Energie requise :  #requiredEnergy"
 --- !u!114 &2847940663784660249
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -415,6 +415,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   requiredEnergy: 0
+  conditionOperator: 
   isOpen: 0
 --- !u!114 &3441738737566224327
 MonoBehaviour:
