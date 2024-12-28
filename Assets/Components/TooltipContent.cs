@@ -34,6 +34,11 @@ public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
             formatedContent = text.Replace("#requiredEnergy", doorComponent.requiredEnergy.ToString());
         }
+        if (text.Contains("#conditionOperator"))
+        {
+            EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
+            formatedContent = text.Replace("#conditionOperator", doorComponent.conditionOperator);
+        }
 
         tooltip.ShowTooltip(formatedContent);
         isOver = true;

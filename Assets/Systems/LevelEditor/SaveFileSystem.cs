@@ -160,6 +160,17 @@ public class SaveFileSystem : FSystem
 		GameObjectManager.setGameObjectState(saveName.transform.parent.parent.gameObject, false);
 	}
 
+	public static string EscapeXml(string input)
+	{
+		if (string.IsNullOrEmpty(input)) return input;
+
+		return input.Replace("&", "&amp;")
+					.Replace("<", "&lt;")
+					.Replace(">", "&gt;")
+					.Replace("\"", "&quot;")
+					.Replace("'", "&apos;");
+	}
+
 	private string buildLevelContent()
 	{
 		string levelExport = "<?xml version=\"1.0\"?>\n";
@@ -246,7 +257,15 @@ public class SaveFileSystem : FSystem
 					levelExport += "\t<door posX=\"" + (d.col+1 - minCol) + "\" posY=\"" + (d.line+ 1 - minLine) + "\" slotId=\""+ d.slot + "\" direction=\""+ (int)d.orientation + "\" />\n\n";
 					break;
 				case DoorEnergie de:
-					levelExport += "\t<doorEnergie posX=\"" + (de.col+1 - minCol) + "\" posY=\"" + (de.line+ 1 - minLine) + "\" requiredEnergy=\""+ de.requiredEnergy + "\" direction=\""+ (int)de.orientation + "\" />\n\n";
+					levelExport += "\t<doorEnergie posX=\"" + (de.col + 1 - minCol) + "\" posY=\"" + (de.line + 1 - minLine) + "\" requiredEnergy=\"" + de.requiredEnergy + "\" direction=\"" + (int)de.orientation + "\"";
+
+					// Vérifiez si 'conditionOperator' est défini
+					if (!string.IsNullOrEmpty(de.conditionOperator))
+					{
+        				levelExport += " conditionOperator=\"" + EscapeXml(de.conditionOperator) + "\"";
+					}
+
+					levelExport += " />\n\n";
 					break;
 				case PlayerRobot pr:
 					levelExport += "\t<player inputLine=\""+ pr.inputLine + "\" posX=\"" + (pr.col + 1 - minCol) + "\" posY=\"" + (pr.line + 1 - minLine) + "\" direction=\"" + (int)pr.orientation + "\" />\n\n";

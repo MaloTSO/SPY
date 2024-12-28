@@ -140,7 +140,7 @@ public class LevelGenerator : FSystem {
 					break;
 				case "doorEnergie":
 					createDoorEnergie(int.Parse(child.Attributes.GetNamedItem("posX").Value), int.Parse(child.Attributes.GetNamedItem("posY").Value),
-					(Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value),int.Parse(child.Attributes.GetNamedItem("requiredEnergy").Value));
+					(Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value),int.Parse(child.Attributes.GetNamedItem("requiredEnergy").Value), child.Attributes.GetNamedItem("conditionOperator").Value);
 					break;
 				case "robot":
 				case "guard":
@@ -339,10 +339,11 @@ public class LevelGenerator : FSystem {
 		door.GetComponentInChildren<Direction>().direction = orientation;
 		GameObjectManager.bind(door);
 	}
-	private void createDoorEnergie(int gridX, int gridY, Direction.Dir orientation, int requiredEnergy){
+	private void createDoorEnergie(int gridX, int gridY, Direction.Dir orientation, int requiredEnergy, string conditionOperator){
 		GameObject doorEnergie = GameObject.Instantiate<GameObject>(Resources.Load ("Prefabs/DoorEnergie") as GameObject, LevelGO.transform.position + new Vector3(gridY*3,3,gridX*3), Quaternion.Euler(0,0,0), LevelGO.transform);
 
 		doorEnergie.GetComponentInChildren<EnergyDoorComponent>().requiredEnergy = requiredEnergy;
+		doorEnergie.GetComponentInChildren<EnergyDoorComponent>().conditionOperator = conditionOperator;
 		doorEnergie.GetComponentInChildren<Position>().x = gridX;
 		doorEnergie.GetComponentInChildren<Position>().y = gridY;
 		doorEnergie.GetComponentInChildren<Direction>().direction = orientation;

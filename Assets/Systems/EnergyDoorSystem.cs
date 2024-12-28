@@ -23,20 +23,33 @@ public class EnergyDoorSystem : FSystem
         {
             EnergyDoorComponent doorComponent = door.GetComponent<EnergyDoorComponent>();
 
-            // Vérifie si la porte doit s'ouvrir
-            if (gameData.totalEnergie >= doorComponent.requiredEnergy)
+            // Vérifie la condition énergétique
+            bool conditionMet = false;
+
+            switch (doorComponent.conditionOperator)
             {
-                foreach (GameObject quad in quads)
-                {
-                    if (quad.CompareTag("Quad")) // Filtrer par tag si nécessaire
-                    {
-                        Collider collider = quad.GetComponent<Collider>();
-                        if (collider != null)
-                        {
-                            collider.enabled = false; // Désactiver uniquement le collider
-                        }
-                    }
-                }
+                case ">":
+                    Debug.Log("ici >");
+                    conditionMet = gameData.totalEnergie > doorComponent.requiredEnergy;
+                    break;
+                case "<":
+                    conditionMet = gameData.totalEnergie < doorComponent.requiredEnergy;
+                    break;
+                case ">=":
+                    conditionMet = gameData.totalEnergie >= doorComponent.requiredEnergy;
+                    break;
+                case "<=":
+                    conditionMet = gameData.totalEnergie <= doorComponent.requiredEnergy;
+                    break;
+                default:
+                    // Pas d'opérateur, compare avec égalité
+                    conditionMet = gameData.totalEnergie == doorComponent.requiredEnergy;
+                    break;
+            }
+
+            // Si la condition est remplie, ouvre la porte
+            if (conditionMet)
+            {
                 doorComponent.transform.parent.GetComponent<Animator>().SetTrigger("Open");
                 doorComponent.transform.parent.GetComponent<Animator>().speed = gameData.gameSpeed_current*3; // Vitesse de l'animation
             }

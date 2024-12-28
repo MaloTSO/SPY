@@ -231,8 +231,9 @@ public class EditorGridSystem : FSystem
 						orientation = (Direction.Dir)int.Parse(child.Attributes.GetNamedItem("direction").Value);
 						setTile(position.Item1, position.Item2, Cell.DoorEnergie, orientation);
 						int requiredEnergy = int.Parse(child.Attributes.GetNamedItem("requiredEnergy").Value); // Lecture de l'énergie requise
+						string conditionOperator = child.Attributes.GetNamedItem("conditionOperator").Value; // Lecture de l'opérateur de comparaison
+						((DoorEnergie)paintableGrid.floorObjects[position]).conditionOperator = conditionOperator;
 						((DoorEnergie)paintableGrid.floorObjects[position]).requiredEnergy = requiredEnergy;
-						
 					}
 					catch
 					{
