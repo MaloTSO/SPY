@@ -60,6 +60,11 @@ public class EnergyDoorSystem : FSystem
                 doorComponent.transform.parent.GetComponent<Animator>().SetTrigger("Open");
                 doorComponent.transform.parent.GetComponent<Animator>().speed = gameData.gameSpeed_current * 3; // Vitesse de l'animation
             }
+            if (!conditionMet)
+            {
+                doorComponent.transform.parent.GetComponent<Animator>().SetTrigger("Close");
+                doorComponent.transform.parent.GetComponent<Animator>().speed = gameData.gameSpeed_current; // Vitesse de l'animation
+            }
         }
     }
 

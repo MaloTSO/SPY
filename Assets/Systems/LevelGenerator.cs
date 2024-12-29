@@ -356,12 +356,7 @@ public class LevelGenerator : FSystem {
 				if (orientation == Direction.Dir.North)
 				{ 
 					enfant.transform.rotation = Quaternion.Euler(0, -90, 0);
-					enfant.transform.position = doorEnergie.transform.position+new Vector3(0.25f,0,0);
-				}
-				if(orientation == Direction.Dir.East) 
-				{
-					enfant.transform.rotation = Quaternion.Euler(0, 0, 0);
-					enfant.transform.position = doorEnergie.transform.position+new Vector3(0,0,-0.25f);
+					enfant.transform.position = doorEnergie.transform.position+ new Vector3(0.25f,0,0);
 				}
 				if(orientation == Direction.Dir.South)
 				{ 
