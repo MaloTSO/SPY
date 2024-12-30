@@ -55,13 +55,15 @@ public class EnergyDoorSystem : FSystem
             }
 
             // Si la condition est remplie, ouvre la porte
-            if (conditionMet)
+            if (conditionMet && !doorComponent.isOpen)
             {
+                doorComponent.isOpen = true;
                 doorComponent.transform.parent.GetComponent<Animator>().SetTrigger("Open");
                 doorComponent.transform.parent.GetComponent<Animator>().speed = gameData.gameSpeed_current * 3; // Vitesse de l'animation
             }
-            if (!conditionMet)
+            if (!conditionMet && doorComponent.isOpen)
             {
+                doorComponent.isOpen = false;
                 doorComponent.transform.parent.GetComponent<Animator>().SetTrigger("Close");
                 doorComponent.transform.parent.GetComponent<Animator>().speed = gameData.gameSpeed_current; // Vitesse de l'animation
             }
