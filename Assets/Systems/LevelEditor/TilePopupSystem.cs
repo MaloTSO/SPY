@@ -262,7 +262,6 @@ public class TilePopupSystem : FSystem
         	if (!System.Text.RegularExpressions.Regex.IsMatch(trimmedData, @"^[0-9><=\s]+$"))
 			{
 				Debug.LogWarning($"Invalid characters in input: '{newData}'. Only valid operators : <,>,<=,>=,= and digits are allowed.");
-				return; // Arrête le traitement si la chaîne contient des caractères invalides
 			}
 
 			string operatorPart = "=";  // Valeur par défaut
@@ -293,6 +292,13 @@ public class TilePopupSystem : FSystem
 			{
 				operatorPart = "=";
 				numericPart = trimmedData.Substring(trimmedData.IndexOf('=') + 1).Trim();
+			}
+
+			Debug.Log($"Operator: {operatorPart}, Numeric part: {numericPart}");
+
+			if (string.IsNullOrEmpty(numericPart))
+			{
+				numericPart = "0";  // Valeur par défaut si la partie numérique est vide
 			}
 
 			// Vérifie si la partie numérique est valide

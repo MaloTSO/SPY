@@ -42,7 +42,7 @@ public class EnergieManager : FSystem {
 				//Check if the player collide with a 
                 if(target.CompareTag("Energie")){
                     gameData.totalEnergie++;
-					Debug.Log(gameData.totalEnergie);
+					// Debug.Log(gameData.totalEnergie);
 					if(energyText != null){
 						energyText.text = "Quantité d'energie : " + gameData.totalEnergie.ToString();
 					}

@@ -28,27 +28,65 @@ public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
         // Remplacement pour #agentName, s'il est trouvé
         if (formatedContent.Contains("#agentName"))
         {
-            formatedContent = formatedContent.Replace("#agentName", GetComponent<AgentEdit>().associatedScriptName);
+            AgentEdit agentEdit = GetComponent<AgentEdit>();
+            if (agentEdit != null)
+            {
+                formatedContent = formatedContent.Replace("#agentName", agentEdit.associatedScriptName);
+            }
+            else
+            {
+                Debug.LogWarning("AgentEdit component is missing on this GameObject!");
+            }
         }
 
         // Remplacement pour #requiredEnergy, s'il est trouvé
         if (formatedContent.Contains("#requiredEnergy"))
         {
-            EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
-            formatedContent = formatedContent.Replace("#requiredEnergy", doorComponent.requiredEnergy.ToString());
+            Transform doorTransform = transform.parent.Find("Door");
+            if (doorTransform != null)
+            {
+                EnergyDoorComponent doorComponent = doorTransform.GetComponentInChildren<EnergyDoorComponent>();
+                if (doorComponent != null)
+                {
+                    formatedContent = formatedContent.Replace("#requiredEnergy", doorComponent.requiredEnergy.ToString());
+                }
+                else
+                {
+                    Debug.LogWarning("EnergyDoorComponent is missing on this GameObject!");
+                }
+            }
+            else
+            {
+                Debug.LogWarning("Door GameObject is missing on this GameObject!");
+            }
         }
 
         // Remplacement pour #conditionOperator, s'il est trouvé
         if (formatedContent.Contains("#conditionOperator"))
         {
-            EnergyDoorComponent doorComponent = GetComponent<EnergyDoorComponent>();
-            formatedContent = formatedContent.Replace("#conditionOperator", doorComponent.conditionOperator);
+            Transform doorTransform = transform.parent.Find("Door");
+            if (doorTransform != null)
+            {
+                EnergyDoorComponent doorComponent = doorTransform.GetComponentInChildren<EnergyDoorComponent>();
+                if (doorComponent != null)
+                {
+                    formatedContent = formatedContent.Replace("#conditionOperator", doorComponent.conditionOperator);
+                }
+                else
+                {
+                    Debug.LogWarning("EnergyDoorComponent is missing on this GameObject!");
+                }
+            }else
+            {
+                Debug.LogWarning("Door GameObject is missing on this GameObject!");
+            }
         }
 
         // Affiche le tooltip avec le contenu formaté
         tooltip.ShowTooltip(formatedContent);
         isOver = true;
     }
+
 
     public void OnPointerExit(PointerEventData eventData)
     {
