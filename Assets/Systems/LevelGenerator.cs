@@ -357,29 +357,6 @@ public class LevelGenerator : FSystem
 		doorEnergie.GetComponentInChildren<Position>().x = gridX;
 		doorEnergie.GetComponentInChildren<Position>().y = gridY;
 		doorEnergie.GetComponentInChildren<Direction>().direction = orientation;
-		Transform[] enfants = doorEnergie.GetComponentsInChildren<Transform>(true);
-		foreach (var enfant in enfants)
-		{
-			// Ignorer l'objet principal (la porte elle-même)
-			if (enfant.name == "Quad")
-			{
-				if (orientation == Direction.Dir.North)
-				{
-					enfant.transform.rotation = Quaternion.Euler(0, -90, 0);
-					enfant.transform.position = doorEnergie.transform.position + new Vector3(0.25f, 0, 0);
-				}
-				if (orientation == Direction.Dir.South)
-				{
-					enfant.transform.rotation = Quaternion.Euler(0, 90, 0);
-					enfant.transform.position = doorEnergie.transform.position + new Vector3(-0.25f, 0, 0);
-				}
-				if (orientation == Direction.Dir.West)
-				{
-					enfant.transform.rotation = Quaternion.Euler(0, 180, 0);
-					enfant.transform.position = doorEnergie.transform.position + new Vector3(0, 0, 0.25f);
-				}
-			}
-		}
 		GameObjectManager.bind(doorEnergie);
 	}
 
