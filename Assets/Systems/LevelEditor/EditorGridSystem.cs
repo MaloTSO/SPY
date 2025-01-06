@@ -487,8 +487,8 @@ public class DoorEnergie : FloorObject
 	public DoorEnergie(Direction.Dir orientation, int line, int col) 
         : base(Cell.DoorEnergie, orientation, line, col)
     {
-		this.conditionOperator="";
-        this.requiredEnergy=null;
+		this.conditionOperator="=";
+        this.requiredEnergy = 0;
     }
 }
 public class Energie : FloorObject
@@ -497,7 +497,7 @@ public class Energie : FloorObject
 
 	public Energie(int line, int col) : base(Cell.Energie, Direction.Dir.North, line, col)
 	{
-		this.energie = null;
+		this.energie = 0;
 	}
 }
 public class Robot : FloorObject
