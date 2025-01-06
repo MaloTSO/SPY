@@ -21,6 +21,7 @@ public class TilePopupSystem : FSystem
 	public GameObject consoleSlotsPopup;
 	public GameObject doorSlotPopup;
 	public GameObject doorEnergieSlotPopup;
+	public GameObject EnergieSlotPopup;
 	public GameObject furniturePopup;
 	public PaintableGrid paintableGrid;
 
@@ -103,6 +104,10 @@ public class TilePopupSystem : FSystem
 					// load data
 					consoleSlotsPopup.GetComponentInChildren<TMP_InputField>().text = string.Join(", ", c.slots);
 					consoleSlotsPopup.GetComponentInChildren<Toggle>().isOn = c.state;
+					break;
+				case Energie e:
+					GameObjectManager.setGameObjectState(EnergieSlotPopup, true);
+					EnergieSlotPopup.GetComponentInChildren<TMP_InputField>().text = e.energie.ToString();
 					break;
 				case DoorEnergie de:
 					// Enable popups for DoorEnergie
@@ -259,7 +264,7 @@ public class TilePopupSystem : FSystem
 		{
 			string trimmedData = newData.Trim();
 
-        	if (!System.Text.RegularExpressions.Regex.IsMatch(trimmedData, @"^[0-9><=\s]+$"))
+			if (!System.Text.RegularExpressions.Regex.IsMatch(trimmedData, @"^[0-9><=\s]+$"))
 			{
 				Debug.LogWarning($"Invalid characters in input: '{newData}'. Only valid operators : <,>,<=,>=,= and digits are allowed.");
 			}
@@ -317,6 +322,24 @@ public class TilePopupSystem : FSystem
 		else
 		{
 			Debug.LogWarning("No selected object to apply energy input.");
+		}
+	}
+	public void popupEnergieSlot(string newData)
+	{
+		if (int.TryParse(newData, out int energyValue))
+		{
+			if (selectedObject != null)
+			{
+				((Energie)selectedObject).energie = energyValue;
+			}
+			else
+			{
+				Debug.LogWarning("No selected object to apply energy input.");
+			}
+		}
+		else
+		{
+			Debug.LogWarning($"Invalid input: '{newData}'. Please enter a valid integer.");
 		}
 	}
 }

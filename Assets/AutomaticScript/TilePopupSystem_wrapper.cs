@@ -9,6 +9,7 @@ public class TilePopupSystem_wrapper : BaseWrapper
 	public UnityEngine.GameObject consoleSlotsPopup;
 	public UnityEngine.GameObject doorSlotPopup;
 	public UnityEngine.GameObject doorEnergieSlotPopup;
+	public UnityEngine.GameObject EnergieSlotPopup;
 	public UnityEngine.GameObject furniturePopup;
 	public PaintableGrid paintableGrid;
 	public UnityEngine.GameObject selection;
@@ -21,6 +22,7 @@ public class TilePopupSystem_wrapper : BaseWrapper
 		MainLoop.initAppropriateSystemField (system, "consoleSlotsPopup", consoleSlotsPopup);
 		MainLoop.initAppropriateSystemField (system, "doorSlotPopup", doorSlotPopup);
 		MainLoop.initAppropriateSystemField (system, "doorEnergieSlotPopup", doorEnergieSlotPopup);
+		MainLoop.initAppropriateSystemField (system, "EnergieSlotPopup", EnergieSlotPopup);
 		MainLoop.initAppropriateSystemField (system, "furniturePopup", furniturePopup);
 		MainLoop.initAppropriateSystemField (system, "paintableGrid", paintableGrid);
 		MainLoop.initAppropriateSystemField (system, "selection", selection);
@@ -74,6 +76,11 @@ public class TilePopupSystem_wrapper : BaseWrapper
 	public void popupDoorEnergieInput(System.String newData)
 	{
 		MainLoop.callAppropriateSystemMethod (system, "popupDoorEnergieInput", newData);
+	}
+
+	public void popupEnergieSlot(System.String newData)
+	{
+		MainLoop.callAppropriateSystemMethod (system, "popupEnergieSlot", newData);
 	}
 
 }

@@ -178,9 +178,12 @@ public class EditorGridSystem : FSystem
 					break;
 				case "energie":
 					try{
+						position = getPositionFromXElement(child);
 						int posCol = int.Parse(child.Attributes.GetNamedItem("posX").Value);
 						int posLig = int.Parse(child.Attributes.GetNamedItem("posY").Value);
 						setTile(posLig, posCol, Cell.Energie);
+						int energie = int.Parse(child.Attributes.GetNamedItem("energie").Value);
+						((Energie)paintableGrid.floorObjects[position]).energie = energie;
 					}
 					catch
 					{
@@ -329,7 +332,7 @@ public class EditorGridSystem : FSystem
 						Cell.Console => new Console(rotation, line, col),
 						Cell.DoorEnergie => new DoorEnergie(rotation, line, col),
 						Cell.Coin => new FloorObject(Cell.Coin, Direction.Dir.North, line, col, false, false),
-						Cell.Energie => new FloorObject(Cell.Energie, Direction.Dir.North, line, col, false, false),
+						Cell.Energie => new Energie(line, col),
 						_ => null
 					};
 			}
@@ -487,6 +490,15 @@ public class DoorEnergie : FloorObject
 		this.conditionOperator="";
         this.requiredEnergy=null;
     }
+}
+public class Energie : FloorObject
+{
+	public int? energie;
+
+	public Energie(int line, int col) : base(Cell.Energie, Direction.Dir.North, line, col)
+	{
+		this.energie = null;
+	}
 }
 public class Robot : FloorObject
 {

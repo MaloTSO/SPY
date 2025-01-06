@@ -422,6 +422,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 11019b9d258a49c4c840ddb2e23dfd3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  requiredEnergy: 0
   conditionOperator: 
   isOpen: 0
 --- !u!114 &3441738737566224327

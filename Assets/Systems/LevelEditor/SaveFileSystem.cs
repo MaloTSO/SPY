@@ -267,6 +267,7 @@ public class SaveFileSystem : FSystem
 
 					levelExport += " />\n\n";
 					break;
+				
 				case PlayerRobot pr:
 					levelExport += "\t<player inputLine=\""+ pr.inputLine + "\" posX=\"" + (pr.col + 1 - minCol) + "\" posY=\"" + (pr.line + 1 - minLine) + "\" direction=\"" + (int)pr.orientation + "\" />\n\n";
 					break;
@@ -277,14 +278,16 @@ public class SaveFileSystem : FSystem
 					levelExport += "\t<decoration name=\""+ deco.path + "\" posX=\"" + (deco.col + 1 - minCol) + "\" posY=\"" + (deco.line + 1 - minLine) + "\" direction=\"" + (int)deco.orientation + "\" />\n\n";
 					break;
 
+				case Energie e:
+					levelExport += "\t<energie posX=\"" + (e.col + 1 - minCol) + "\" posY=\"" + (e.line + 1 - minLine) + "\" energie =\"" + e.energie + "\" />\n\n";
+					break;
+
 				default:
-					if (fo.type != Cell.Coin && fo.type != Cell.Energie)
+					if (fo.type != Cell.Coin)
 					{
 						Debug.Log("Unexpected floor object type, object ignored: " + fo.type);
 						break;
 					}
-					if (fo.type == Cell.Energie)
-						levelExport += "\t<energie posX=\"" + (fo.col + 1 - minCol) + "\" posY=\"" + (fo.line + 1 - minLine) + "\" />\n\n";
 					if (fo.type == Cell.Coin)
 					{
 						levelExport += "\t<coin posX=\"" + (fo.col + 1 - minCol) + "\" posY=\"" + (fo.line + 1 - minLine) + "\" />\n\n";

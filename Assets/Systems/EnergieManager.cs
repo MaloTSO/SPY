@@ -41,7 +41,7 @@ public class EnergieManager : FSystem {
 			foreach(GameObject target in trigger.Targets){
 				//Check if the player collide with a 
                 if(target.CompareTag("Energie")){
-                    gameData.totalEnergie++;
+                    gameData.totalEnergie += target.GetComponent<EnergyComponent>().energie;
 					// Debug.Log(gameData.totalEnergie);
 					if(energyText != null){
 						energyText.text = "Quantité d'energie : " + gameData.totalEnergie.ToString();

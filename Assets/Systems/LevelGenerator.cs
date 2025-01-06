@@ -129,7 +129,8 @@ public class LevelGenerator : FSystem {
 					createCoin(int.Parse(child.Attributes.GetNamedItem("posX").Value), int.Parse(child.Attributes.GetNamedItem("posY").Value));
 					break;
 				case "energie":
-					createEnergie(int.Parse(child.Attributes.GetNamedItem("posX").Value), int.Parse(child.Attributes.GetNamedItem("posY").Value));
+					createEnergie(int.Parse(child.Attributes.GetNamedItem("posX").Value), int.Parse(child.Attributes.GetNamedItem("posY").Value),
+					int.Parse(child.Attributes.GetNamedItem("energie").Value));
 					break;
 				case "console":
 					readXMLConsole(child);
@@ -425,11 +426,20 @@ public class LevelGenerator : FSystem {
 		GameObjectManager.bind(coin);
 	}
 
-	private void createEnergie(int gridX, int gridY){
-		GameObject energie = GameObject.Instantiate<GameObject>(Resources.Load ("Prefabs/Energie") as GameObject, LevelGO.transform.position + new Vector3(gridY*3,3,gridX*3), Quaternion.Euler(90,0,0), LevelGO.transform);
-		energie.GetComponent<Position>().x = gridX;
-		energie.GetComponent<Position>().y = gridY;
-		GameObjectManager.bind(energie);
+	private void createEnergie(int gridX, int gridY, int energy){
+		GameObject energieObject = GameObject.Instantiate<GameObject>(Resources.Load ("Prefabs/Energie") as GameObject, LevelGO.transform.position + new Vector3(gridY*3,3,gridX*3), Quaternion.Euler(90,0,0), LevelGO.transform);
+		energieObject.GetComponentInChildren<EnergyComponent>().energie = energy;
+
+		if (energy >=0){
+			energieObject.GetComponent<Renderer>().material.color = new Color(0, 1, 0, 1);
+		}
+		else{
+			energieObject.GetComponent<Renderer>().material.color = new Color(1, 0, 0, 1);
+		}
+
+		energieObject.GetComponent<Position>().x = gridX;
+		energieObject.GetComponent<Position>().y = gridY;
+		GameObjectManager.bind(energieObject);
 	}
 
 	private void createCell(int gridX, int gridY){

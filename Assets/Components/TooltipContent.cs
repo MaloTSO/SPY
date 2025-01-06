@@ -82,6 +82,19 @@ public class TooltipContent : MonoBehaviour, IPointerEnterHandler, IPointerExitH
             }
         }
 
+        if (formatedContent.Contains("#energie"))
+        {
+            EnergyComponent energyComponent = GetComponent<EnergyComponent>();
+            if (energyComponent != null)
+            {
+                formatedContent = formatedContent.Replace("#energie", energyComponent.energie.ToString());
+            }
+            else
+            {
+                Debug.LogWarning("EnergyComponent is missing on this GameObject!");
+            }
+        }
+
         // Affiche le tooltip avec le contenu formaté
         tooltip.ShowTooltip(formatedContent);
         isOver = true;
