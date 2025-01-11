@@ -10,16 +10,10 @@
 		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="2" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 	</map>
 
-	<score twoStars="4000" threeStars="6000"/>
+	<score twoStars="4500" threeStars="4983"/>
 
 	<blockLimits>
 		<blockLimit blockType="Forward" limit="-1" />
@@ -27,10 +21,10 @@
 		<blockLimit blockType="TurnRight" limit="0" />
 		<blockLimit blockType="TurnBack" limit="0" />
 		<blockLimit blockType="Activate" limit="0" />
-		<blockLimit blockType="Wait" limit="0" />
+		<blockLimit blockType="Wait" limit="-1" />
 		<blockLimit blockType="IfThen" limit="0" />
 		<blockLimit blockType="IfElse" limit="0" />
-		<blockLimit blockType="ForLoop" limit="1" />
+		<blockLimit blockType="ForLoop" limit="-1" />
 		<blockLimit blockType="While" limit="0" />
 		<blockLimit blockType="Forever" limit="0" />
 		<blockLimit blockType="AndOperator" limit="0" />
@@ -49,27 +43,34 @@
 		<blockLimit blockType="Exit" limit="0" />
 	</blockLimits>
 
-	<enemy inputLine="drone" posX="2" posY="3" direction="2" range="1" selfRange="False" typeRange="0" />
+	<enemy inputLine="drone" posX="2" posY="3" direction="2" range="1" selfRange="True" typeRange="0" />
 
 	<doorEnergie posX="3" posY="3" requiredEnergy="3" direction="2" conditionOperator="&lt;" />
 
-	<energie posX="4" posY="8" energie ="-3" />
+	<energie posX="4" posY="6" energie ="6" />
 
-	<energie posX="4" posY="4" energie ="6" />
+	<player inputLine="Bob" posX="4" posY="8" direction="0" />
 
-	<player inputLine="Bob" posX="4" posY="14" direction="0" />
+	<energie posX="4" posY="5" energie ="-4" />
 
 	<script outputLine="drone" editMode="2" type="3">
 		<action type="Forward"/>
 		<action type="Forward"/>
 		<action type="Forward"/>
-		<action type="TurnLeft"/>
-		<action type="TurnLeft"/>
+		<action type="TurnBack"/>
 		<action type="Forward"/>
 		<action type="Forward"/>
 		<action type="Forward"/>
-		<action type="TurnRight"/>
-		<action type="TurnRight"/>
+		<action type="TurnBack"/>
+		<action type="Forward"/>
+		<action type="Forward"/>
+		<action type="Forward"/>
+		<action type="TurnBack"/>
+		<action type="Forward"/>
+		<action type="Forward"/>
+		<action type="Forward"/>
+		<action type="Forward"/>
+		<action type="TurnBack"/>
 	</script>
 
 </level>

@@ -1,32 +1,34 @@
 <?xml version="1.0"?>
 <level>
 	<map>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="3" /><cell value="-1" /><cell value="-1" /><cell value="2" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="3" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="2" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="3" /><cell value="-1" /><cell value="-1" /><cell value="2" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="3" /><cell value="1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="2" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 	</map>
 
-	<score twoStars="0" threeStars="0"/>
+	<score twoStars="3200" threeStars="3782"/>
 
 	<blockLimits>
-		<blockLimit blockType="Forward" limit="0" />
-		<blockLimit blockType="TurnLeft" limit="0" />
-		<blockLimit blockType="TurnRight" limit="0" />
-		<blockLimit blockType="TurnBack" limit="0" />
+		<blockLimit blockType="Forward" limit="-1" />
+		<blockLimit blockType="TurnLeft" limit="-1" />
+		<blockLimit blockType="TurnRight" limit="-1" />
+		<blockLimit blockType="TurnBack" limit="-1" />
 		<blockLimit blockType="Activate" limit="0" />
-		<blockLimit blockType="Wait" limit="0" />
+		<blockLimit blockType="Wait" limit="-1" />
 		<blockLimit blockType="IfThen" limit="0" />
 		<blockLimit blockType="IfElse" limit="0" />
-		<blockLimit blockType="ForLoop" limit="0" />
+		<blockLimit blockType="ForLoop" limit="-1" />
 		<blockLimit blockType="While" limit="0" />
 		<blockLimit blockType="Forever" limit="0" />
 		<blockLimit blockType="AndOperator" limit="0" />
@@ -45,30 +47,30 @@
 		<blockLimit blockType="Exit" limit="0" />
 	</blockLimits>
 
-	<doorEnergie posX="2" posY="10" requiredEnergy="5" direction="3" conditionOperator="&gt;=" />
+	<doorEnergie posX="3" posY="11" requiredEnergy="5" direction="3" conditionOperator="&gt;=" />
 
-	<doorEnergie posX="1" posY="7" requiredEnergy="0" direction="0" conditionOperator="&lt;" />
+	<doorEnergie posX="2" posY="8" requiredEnergy="0" direction="0" conditionOperator="&lt;" />
 
-	<doorEnergie posX="1" posY="4" requiredEnergy="0" direction="0" conditionOperator="&gt;" />
+	<doorEnergie posX="2" posY="5" requiredEnergy="0" direction="0" conditionOperator="&gt;" />
 
-	<energie posX="5" posY="10" energie ="2" />
+	<energie posX="2" posY="4" energie ="-1" />
 
-	<energie posX="1" posY="3" energie ="-1" />
+	<energie posX="7" posY="9" energie ="-4" />
 
-	<energie posX="6" posY="8" energie ="-4" />
+	<player inputLine="rob" posX="5" posY="2" direction="1" />
 
-	<player inputLine="Robert" posX="4" posY="1" direction="1" />
+	<energie posX="4" posY="9" energie ="2" />
 
-	<energie posX="3" posY="8" energie ="2" />
+	<doorEnergie posX="5" posY="3" requiredEnergy="2" direction="1" conditionOperator="=" />
 
-	<energie posX="4" posY="6" energie ="-6" />
+	<doorEnergie posX="9" posY="9" requiredEnergy="-4" direction="2" conditionOperator="&lt;=" />
 
-	<energie posX="4" posY="4" energie ="3" />
+	<player inputLine="Bob" posX="9" posY="11" direction="3" />
 
-	<doorEnergie posX="4" posY="2" requiredEnergy="2" direction="1" conditionOperator="=" />
+	<energie posX="8" posY="11" energie ="2" />
 
-	<doorEnergie posX="8" posY="8" requiredEnergy="-4" direction="2" conditionOperator="&lt;=" />
+	<energie posX="5" posY="6" energie ="-6" />
 
-	<player inputLine="Bob" posX="7" posY="10" direction="3" />
+	<energie posX="5" posY="4" energie ="3" />
 
 </level>
