@@ -44,6 +44,6 @@
 
 	<energie posX="6" posY="2" energie ="-3" />
 
-	<doorEnergie posX="7" posY="2" requiredEnergy="3" direction="2" conditionOperator="&lt;" />
+	<doorEnergie posX="8" posY="2" requiredEnergy="3" direction="2" conditionOperator="&lt;" />
 
 </level>
