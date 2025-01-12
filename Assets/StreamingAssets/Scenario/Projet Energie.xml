@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<scenario name="Projet Energie" desc="Dans ce scénario, tu devras sortir de la base en passant par plusieurs étage.
+
+La base est pris d'une coupure de courant générale, heuresement tu as équipé ton robot d'une batterie pour stocker de l'énergie afin d'ouvrir les portes qui sont bloqués à cause de la coupure">
+	<level src = "Levels/Energie/Niveau01.xml" name = "Niveau01" >
+		<dialogs>
+			<dialog text ="Il est grand temps pour ton robot de sortir de cette base." enableInteraction ="0" />
+			<dialog text ="Attends, il semblerait qu'il n'y ait plus de courant dans la base, à cause de cela les portes semblent hors services." enableInteraction ="0" />
+			<dialog text ="Heuresement, ton robot est équipé d'un espace de stockage d'énergie." enableInteraction ="0" />
+			<dialog text ="Essaye de trouver de l'énergie pour alimenter les portes." enableInteraction ="0" />
+			<dialog text ="Regarde devant, cette porte semble fermer, ramasse cette énergie juste devant et essaye d'alimenter la porte avec." enableInteraction ="0" />
+			<dialog text ="Essaye de passer ta souris sur cette énergie et sur la porte pour vérifier la quantité qu'elle contient, au passage essaye aussi de passer ta souris sur la porte peut être que tu trouveras de informations sur celle-ci" enableInteraction ="1" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau02.xml" name = "Niveau02" >
+		<dialogs>
+			<dialog text ="Parfait ca à l'air de fonctionner." enableInteraction ="0" />
+			<dialog text ="Maintenant, fais sortir ton robot de la base en stockant de l'énergie pour les portes." enableInteraction ="0" />
+			<dialog text ="On dirait qu'il y a plusieurs portes à cette étage, peut être que chacune d'elle a besoin d'une quantité d'énergie différente." enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau03.xml" name = "Niveau03" >
+		<dialogs>
+			<dialog text ="Continue d'avancer" enableInteraction ="0" />
+			<dialog text ="Fais attention, assure toi de bien ramasser la quantité d'énergie requis pour ouvrir la porte." enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau04.xml" name = "Niveau04" >
+		<dialogs>
+			<dialog text ="Attention, cette énergie est trop grande pour la porte." enableInteraction ="0" />
+			<dialog text ="Essaye de prendre cette autre énergie derrière pour réduire la quantité d'énergie totale" enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau05.xml" name = "Niveau05" >
+		<dialogs>
+			<dialog text ="Parfait, les énergies rouges ont l'air de reduir ela quantité d'énergie du stockage" enableInteraction ="0" />
+			<dialog text ="On repart, il nous reste encore pas mal d'étages avant d'atteindre la sortie" enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau06.xml" name = "Niveau06" >
+		<dialogs>
+			<dialog text ="Il semblerait que quelqu'un à laisser des instructions mais il y en a plusieurs " enableInteraction ="0" />
+			<dialog text ="Retrouve la bonne séquence pour sortir" enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau07.xml" name = "Niveau07" >
+		<dialogs>
+			<dialog text ="La coupure de courant n'a pas l'air d'avoir affecté les drones de surveillance" enableInteraction ="0" />
+			<dialog text ="On ne pourra pas atteindre la sortie tant que ce drone sera la" enableInteraction ="0" />
+			<dialog text ="Essaye de bloquer le drone avec la porte pour passer" enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau08.xml" name = "Niveau08" >
+		<dialogs>
+			<dialog text ="On a atteint la salle de stockage des drones " enableInteraction ="0" />
+			<dialog text ="Les drones ne devraient pas se déplacer mais ils surveillent toujours alors fais attention" enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau09.xml" name = "Niveau09" >
+		<dialogs>
+			<dialog text ="On dirait qu'un autre robot essaye de quitter la base comme nous" enableInteraction ="0" />
+			<dialog text ="Combiner vos forces pour vous échapper" enableInteraction ="0" />
+			<dialog text ="Attention à l'ordre des actions de chaque robots" enableInteraction ="0" />
+		</dialogs>
+	</level>
+	<level src = "Levels/Energie/Niveau10.xml" name = "Niveau10" >
+		<dialogs>
+			<dialog text ="Enfin, nous avons atteint le dernier étage, la sortie est toute proche " enableInteraction ="0" />
+			<dialog text ="Cache toi de ces drones pour ne pas te faire repérer" enableInteraction ="0" />
+		</dialogs>
+	</level>
+</scenario>
