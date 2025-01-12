@@ -8,7 +8,7 @@
 		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 	</map>
 
-	<score twoStars="5000" threeStars="5416"/>
+	<score twoStars="5000" threeStars="5454"/>
 
 	<blockLimits>
 		<blockLimit blockType="Forward" limit="-1" />

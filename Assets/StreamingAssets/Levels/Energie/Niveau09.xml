@@ -9,15 +9,15 @@
 		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="0" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="3" /><cell value="1" /><cell value="-1" /></line>
-		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="1" /><cell value="1" /><cell value="0" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="1" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="3" /><cell value="1" /><cell value="-1" /></line>
+		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="1" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="0" /><cell value="2" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 		<line><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /><cell value="-1" /></line>
 	</map>
 
-	<score twoStars="3200" threeStars="3782"/>
+	<score twoStars="3200" threeStars="3708"/>
 
 	<blockLimits>
 		<blockLimit blockType="Forward" limit="-1" />
@@ -26,15 +26,15 @@
 		<blockLimit blockType="TurnBack" limit="-1" />
 		<blockLimit blockType="Activate" limit="0" />
 		<blockLimit blockType="Wait" limit="-1" />
-		<blockLimit blockType="IfThen" limit="0" />
+		<blockLimit blockType="IfThen" limit="2" />
 		<blockLimit blockType="IfElse" limit="0" />
 		<blockLimit blockType="ForLoop" limit="-1" />
-		<blockLimit blockType="While" limit="0" />
+		<blockLimit blockType="While" limit="2" />
 		<blockLimit blockType="Forever" limit="0" />
 		<blockLimit blockType="AndOperator" limit="0" />
 		<blockLimit blockType="OrOperator" limit="0" />
-		<blockLimit blockType="NotOperator" limit="0" />
-		<blockLimit blockType="WallFront" limit="0" />
+		<blockLimit blockType="NotOperator" limit="2" />
+		<blockLimit blockType="WallFront" limit="2" />
 		<blockLimit blockType="WallLeft" limit="0" />
 		<blockLimit blockType="WallRight" limit="0" />
 		<blockLimit blockType="PathFront" limit="0" />
@@ -44,7 +44,7 @@
 		<blockLimit blockType="RedArea" limit="0" />
 		<blockLimit blockType="FieldGate" limit="0" />
 		<blockLimit blockType="Terminal" limit="0" />
-		<blockLimit blockType="Exit" limit="0" />
+		<blockLimit blockType="Exit" limit="2" />
 	</blockLimits>
 
 	<doorEnergie posX="3" posY="11" requiredEnergy="5" direction="3" conditionOperator="&gt;=" />
